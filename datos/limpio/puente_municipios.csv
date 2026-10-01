@@ -1,0 +1,82 @@
+cve_inegi,nom_mun,pob_total,pob_6a11,pob_12a14,pob_15a17,pob_18a24,grado_prom_escolaridad,nom_mun_norm
+12001,Acapulco de Juárez,779566,77705,39259,39697,88129,9.87,acapulco de juarez
+12002,Ahuacuotzingo,25205,3774,1640,1647,2941,5.27,ahuacuotzingo
+12003,Ajuchitlán del Progreso,37655,4744,2226,2089,4182,6.87,ajuchitlan del progreso
+12004,Alcozauca de Guerrero,21225,3547,1597,1351,2504,4.6,alcozauca de guerrero
+12005,Alpoyeca,7813,1002,569,476,967,7.31,alpoyeca
+12006,Apaxtla,11112,1395,633,649,1166,7.8,apaxtla
+12007,Arcelia,33267,3972,1798,1726,3591,8.41,arcelia
+12008,Atenango del Río,9147,1129,494,477,987,6.46,atenango del rio
+12009,Atlamajalcingo del Monte,5811,851,415,399,704,5.93,atlamajalcingo del monte
+12010,Atlixtac,28491,4712,2285,1983,3321,5.32,atlixtac
+12011,Atoyac de Álvarez,60680,7123,3413,3511,6331,8.38,atoyac de alvarez
+12012,Ayutla de los Libres,69123,9829,4847,4910,8519,7.23,ayutla de los libres
+12013,Azoyú,15099,1843,911,871,1512,7.48,azoyu
+12014,Benito Juárez,15442,1491,756,835,1431,9.04,benito juarez
+12015,Buenavista de Cuéllar,12982,1286,677,748,1405,8.09,buenavista de cuellar
+12016,Coahuayutla de José María Izazaga,12408,1457,700,658,1360,5.57,coahuayutla de jose maria izazaga
+12017,Cocula,15579,1841,848,738,1781,7.48,cocula
+12018,Copala,14463,1730,881,854,1467,7.67,copala
+12019,Copalillo,15598,2178,1010,1033,1839,5.42,copalillo
+12020,Copanatoyac,21648,3313,1613,1613,2847,5.35,copanatoyac
+12021,Coyuca de Benítez,73056,8601,4145,4345,7830,8.09,coyuca de benitez
+12022,Coyuca de Catalán,38554,4280,2076,1747,3813,6.78,coyuca de catalan
+12023,Cuajinicuilapa,26627,3518,1719,1553,2622,7.02,cuajinicuilapa
+12024,Cualác,7874,1008,581,498,851,6.81,cualac
+12025,Cuautepec,17024,2323,1172,1097,1736,7.19,cuautepec
+12026,Cuetzala del Progreso,8272,939,434,425,785,6.13,cuetzala del progreso
+12027,Cutzamala de Pinzón,20537,2293,967,975,2024,5.94,cutzamala de pinzon
+12028,Chilapa de Álvarez,123722,17217,8380,8024,13991,6.56,chilapa de alvarez
+12029,Chilpancingo de los Bravo,283354,30915,15268,15472,35941,10.66,chilpancingo de los bravo
+12030,Florencio Villarreal,22250,2907,1414,1240,2522,8.19,florencio villarreal
+12031,General Canuto A. Neri,6278,806,366,323,652,6.59,general canuto a neri
+12032,General Heliodoro Castillo,37254,5715,2739,2574,4546,6.39,general heliodoro castillo
+12033,Huamuxtitlán,17488,2148,1015,994,1979,7.62,huamuxtitlan
+12034,Huitzuco de los Figueroa,36593,4027,1822,1884,3827,7.47,huitzuco de los figueroa
+12035,Iguala de la Independencia,154173,16447,7900,8078,17812,10.03,iguala de la independencia
+12036,Igualapa,11739,1632,838,779,1378,7.35,igualapa
+12037,Ixcateopan de Cuauhtémoc,6138,653,281,309,692,7.49,ixcateopan de cuauhtemoc
+12038,Zihuatanejo de Azueta,126001,12992,6393,6257,13612,9.29,zihuatanejo de azueta
+12039,Juan R. Escudero,26093,3071,1491,1495,2942,7.88,juan r escudero
+12040,Leonardo Bravo,26357,3575,1592,1405,3195,6.91,leonardo bravo
+12041,Malinaltepec,29625,4601,2494,2282,3332,7.77,malinaltepec
+12042,Mártir de Cuilapan,18613,2744,1238,1049,2044,5.73,martir de cuilapan
+12043,Metlatónoc,18859,3272,1638,1318,2156,4.86,metlatonoc
+12044,Mochitlán,12402,1464,691,712,1385,8.08,mochitlan
+12045,Olinalá,28446,3996,1841,1718,3307,6.19,olinala
+12046,Ometepec,68207,8684,4521,4589,8808,8.36,ometepec
+12047,Pedro Ascencio Alquisiras,7076,957,412,415,785,5.78,pedro ascencio alquisiras
+12048,Petatlán,44583,4918,2572,2359,5424,7.96,petatlan
+12049,Pilcaya,12753,1470,758,657,1474,7.54,pilcaya
+12050,Pungarabato,38482,4313,2104,1940,4455,8.97,pungarabato
+12051,Quechultenango,36143,5091,2311,2435,4334,6.35,quechultenango
+12052,San Luis Acatlán,46270,6565,3512,3494,5659,7.18,san luis acatlan
+12053,San Marcos,50124,6360,3032,3054,5459,7.43,san marcos
+12054,San Miguel Totolapan,24139,3410,1520,1360,2635,6.47,san miguel totolapan
+12055,Taxco de Alarcón,105586,10570,5579,5790,12305,8.64,taxco de alarcon
+12056,Tecoanapa,46063,5910,2967,3226,5074,7.82,tecoanapa
+12057,Técpan de Galeana,65237,7044,3371,3432,6811,7.94,tecpan de galeana
+12058,Teloloapan,53817,6557,2970,2913,5932,7.92,teloloapan
+12059,Tepecoacuilco de Trujano,30806,3385,1611,1447,3222,7.26,tepecoacuilco de trujano
+12060,Tetipac,13552,1651,789,767,1523,6.78,tetipac
+12061,Tixtla de Guerrero,43171,4929,2546,2501,4938,9.21,tixtla de guerrero
+12062,Tlacoachistlahuaca,22781,3570,1919,1641,2702,5.04,tlacoachistlahuaca
+12063,Tlacoapa,10092,1512,810,718,1113,7.03,tlacoapa
+12064,Tlalchapa,11681,1332,577,552,1035,7.52,tlalchapa
+12065,Tlalixtaquilla de Maldonado,7602,994,455,388,897,6.14,tlalixtaquilla de maldonado
+12066,Tlapa de Comonfort,96125,13086,6504,6082,12617,8.22,tlapa de comonfort
+12067,Tlapehuala,22209,2663,1243,1145,2308,8.13,tlapehuala
+12068,La Unión de Isidoro Montes de Oca,26349,2961,1278,1342,2698,7.09,la union de isidoro montes de oca
+12069,Xalpatláhuac,11966,1695,916,742,1328,5.09,xalpatlahuac
+12070,Xochihuehuetlán,7862,825,414,439,902,6.35,xochihuehuetlan
+12071,Xochistlahuaca,29891,3841,2178,2168,3319,5.19,xochistlahuaca
+12072,Zapotitlán Tablas,12004,1832,902,775,1587,6.33,zapotitlan tablas
+12073,Zirándaro,18031,1997,1020,913,1777,5.53,zirandaro
+12074,Zitlala,21977,3082,1527,1542,2308,5.81,zitlala
+12075,Eduardo Neri,53126,6710,2969,2827,6445,7.96,eduardo neri
+12076,Acatepec,40197,6747,3480,3254,5547,6.57,acatepec
+12077,Marquelia,14280,1829,871,862,1539,8.16,marquelia
+12078,Cochoapa el Grande,21241,4049,1835,1411,2149,3.4,cochoapa el grande
+12079,José Joaquín de Herrera,18381,3024,1516,1440,2336,5.18,jose joaquin de herrera
+12080,Juchitán,7559,970,434,441,749,6.9,juchitan
+12081,Iliatenco,11679,1541,945,1003,1473,8.5,iliatenco

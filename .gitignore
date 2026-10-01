@@ -1,0 +1,23 @@
+# Entorno de Python
+.venv/
+__pycache__/
+*.pyc
+
+# Datos crudos: 785 MB y seis archivos rebasan el límite de 100 MB por archivo
+# de GitHub. No se versionan, pero datos/crudo/MANIFIESTO.csv sí, con el SHA-256
+# y la URL de cada archivo, de modo que `src/00_descargar.py` reconstruye el
+# conjunto exacto con el que se obtuvieron estos resultados.
+datos/crudo/*
+!datos/crudo/MANIFIESTO.csv
+
+# Descomprimidos temporales
+datos/intermedio/
+
+# Derivado grande que `src/12_nacional.py` regenera en un par de minutos.
+datos/limpio/nacional_localidades.csv
+
+# Artefactos de compilación de LaTeX
+salidas/art_fallido.tex
+*.aux
+*.log
+*.out
