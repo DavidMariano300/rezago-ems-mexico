@@ -73,7 +73,12 @@ PREAMBULO = r"""\documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage[hidelinks,breaklinks=true]{hyperref}
-\usepackage{xurl}
+% Las URLs se parten solo en separadores naturales. Con xurl se partían en
+% cualquier carácter y «coneval.org» quedaba como «coneval.or / g», lo que al
+% copiar el PDF producía una URL aparentemente rota.
+\usepackage{url}
+\def\UrlBreaks{\do\/\do\-\do\.\do\_\do\?\do\&\do\=\do\+\do\:}
+\Urlmuskip=0mu plus 3mu\relax
 \usepackage{enumitem}
 
 \doublespacing

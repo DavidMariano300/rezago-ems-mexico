@@ -4,7 +4,7 @@ autor: Edgar David Mariano Ruiz
 afiliacion: Facultad de Ingeniería, Universidad Autónoma de Guerrero
 programa: Maestría en Ingeniería para la Innovación y el Desarrollo Tecnológico
 fecha: 1 de octubre de 2026
-nota: Edgar David Mariano Ruiz, Facultad de Ingeniería, Universidad Autónoma de Guerrero. La correspondencia relativa a este artículo debe dirigirse a Edgar David Mariano Ruiz, Facultad de Ingeniería, Universidad Autónoma de Guerrero, Chilpancingo de los Bravo, Guerrero, México. Correo electrónico: 25600451@uagro.mx. ORCID: [pendiente de registro]. Declaración de conflicto de intereses: el autor declara no tener conflictos de intereses. Los datos y el código que sustentan los resultados proceden en su totalidad de fuentes abiertas y se encuentran disponibles para su verificación.
+nota: Edgar David Mariano Ruiz, Facultad de Ingeniería, Universidad Autónoma de Guerrero. La correspondencia relativa a este artículo debe dirigirse a Edgar David Mariano Ruiz, Facultad de Ingeniería, Universidad Autónoma de Guerrero, Chilpancingo de los Bravo, Guerrero, México. Correo electrónico: 25600451@uagro.mx. ORCID: https://orcid.org/0009-0005-6171-1206. Declaración de conflicto de intereses: el autor declara no tener conflictos de intereses. Los datos y el código que sustentan los resultados proceden en su totalidad de fuentes abiertas. El código de análisis se encuentra disponible en https://github.com/DavidMariano300/rezago-ems-mexico, junto con el manifiesto de procedencia que permite reconstruir los conjuntos de datos empleados.
 :::
 
 ## Resumen
