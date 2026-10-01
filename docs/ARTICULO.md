@@ -155,7 +155,7 @@ En el contraste entre cohortes para Guerrero, cada kilómetro adicional de dista
 ::: tabla 3
 titulo: Prueba de Falsación Mediante Contraste Entre Cohortes de Edad Dentro de la Misma Localidad (Guerrero)
 nota: Coeficientes expresados en puntos porcentuales por kilómetro de distancia diferencial. Cada ecuación incluye simultáneamente ambas distancias. La asimetría del patrón confirma que cada distancia afecta únicamente a la cohorte del nivel educativo correspondiente.
-ancho: 6.6cm
+peso: 1.3
 | Variable dependiente | Distancia del nivel correspondiente | Distancia del otro nivel |
 |---|---|---|
 | Brecha 15-17 frente a 12-14 | −1.70 (*p* < .001) | −0.28 (*p* = .286) |

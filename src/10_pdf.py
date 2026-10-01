@@ -115,6 +115,11 @@ PREAMBULO = r"""\documentclass[12pt,letterpaper]{article}
   {\par\setlength{\parindent}{0pt}}
   {\par}
 
+% babel en español inserta un espacio fino antes del signo de porcentaje, de
+% modo que «95\%» sale como «95 %». La norma APA lo quiere pegado, así que el
+% signo se emite por su código y no por la secuencia \% que babel intercepta.
+\newcommand{\pct}{\char37\relax}
+
 \setlist[enumerate]{leftmargin=1.27cm,labelsep=0.4em,itemsep=0pt,parsep=0pt,
                     topsep=0pt}
 \setlist[itemize]{leftmargin=1.27cm,itemsep=0pt,parsep=0pt,topsep=0pt}
@@ -122,7 +127,7 @@ PREAMBULO = r"""\documentclass[12pt,letterpaper]{article}
 \begin{document}
 """.replace("ENCABEZADO_CORTO", ENCABEZADO)
 
-ESCAPES = {"&": r"\&", "%": r"\%", "$": r"\$", "#": r"\#", "_": r"\_"}
+ESCAPES = {"&": r"\&", "%": r"\pct{}", "$": r"\$", "#": r"\#", "_": r"\_"}
 
 # Unicode que inputenc no reconoce. El signo menos tipográfico es el más
 # frecuente porque casi todos los coeficientes del artículo son negativos.
@@ -232,9 +237,15 @@ def tabla(num: str, meta: dict, filas_md: list[str]) -> str:
            r"\begin{center}", r"\begin{tabularx}{\textwidth}{" + col + "}", r"\toprule"]
     out.append(" & ".join(en_linea(c) for c in filas[0]) + r" \\")
     out.append(r"\midrule")
+    def celda(txt: str, primera: bool) -> str:
+        t = en_linea(txt)
+        # La primera columna lleva texto descriptivo y debe poder fluir; las de
+        # cifras son cortas y se mantienen en una sola línea.
+        return t if primera or len(txt) > 28 else r"\mbox{" + t + "}"
+
     for f in filas[1:]:
         f = (f + [""] * n)[:n]
-        out.append(" & ".join(en_linea(c) for c in f) + r" \\")
+        out.append(" & ".join(celda(c, k == 0) for k, c in enumerate(f)) + r" \\")
     out += [r"\bottomrule", r"\end{tabularx}", r"\end{center}"]
     if meta.get("nota"):
         out.append(r"\begin{singlespace}\noindent{\footnotesize\textit{Nota.} "

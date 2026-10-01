@@ -73,7 +73,7 @@ Después, en orden:
 for s in 01_puente_municipios 02_abandono 03_cruce 04_distancia \
          05_asistencia_censal 06_localidades 07_subsistemas 08_figuras \
          09_brecha_restante 11_alerta_temprana 12_nacional 13_modelo_riesgo \
-         14_figuras_nacional 10_pdf; do
+         14_figuras_nacional 10_pdf 15_docx; do
   .venv/bin/python "src/$s.py"
 done
 ```
@@ -94,6 +94,9 @@ Archivos de interés inmediato:
 - `datos/limpio/riesgo_municipal.csv` — los 2,469 municipios clasificados, con
   inasistencia observada, predicha, y la brecha entre ambas.
 - `salidas/Articulo_APA7.pdf` — el manuscrito completo.
+- `salidas/Articulo_APA7.docx` — el mismo manuscrito en Word, editable.
+  Tanto el PDF como el .docx se generan desde `docs/ARTICULO.md`, de modo que
+  una corrección se hace una vez y las dos versiones se regeneran.
 - `docs/ALERTA_TEMPRANA_UAGRO.md` — diseño de un sistema de alerta temprana a
   nivel estudiante, que es la unidad donde una alerta sí resulta accionable.
 
