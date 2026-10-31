@@ -23,6 +23,8 @@ prediciendo municipios de estados que nunca observó durante el entrenamiento.
 | **Estructural, potenciación por gradiente** | **0.627** | **4.55** |
 | Ampliada, con inasistencia de 12 a 14 años | 0.830 | 2.99 |
 
+![Inasistencia observada contra predicha en los 2,469 municipios, y R² por entidad](salidas/figuras/fig5_validacion_estados.png)
+
 La validación aparta **estados completos** en cada pliegue. Una validación
 cruzada aleatoria habría inflado el resultado, porque los municipios vecinos
 comparten condiciones y el modelo puede memorizar regiones.
@@ -110,6 +112,8 @@ Las tres son de acceso abierto y se citan en el manuscrito:
 - **CONEVAL**, Índice de Rezago Social 2020 y medición de pobreza municipal.
 
 ## Entorno
+
+**Tecnologías:** Python, pandas, NumPy, SciPy, scikit-learn, statsmodels, Matplotlib y LaTeX.
 
 Python 3.12.3, NumPy 2.5.3, pandas 3.0.6, SciPy 1.18.1, scikit-learn 1.9.1,
 statsmodels 0.15.0. El PDF se compila con pdfLaTeX.
