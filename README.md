@@ -1,5 +1,7 @@
 # Rezago en el acceso a la educación media superior en México
 
+> **In English:** a replicable model, built only from Mexican open data (INEGI, SEP, CONEVAL), that identifies the municipalities with the largest gap in access to upper-secondary education. Validated by holding out whole states, it reaches an out-of-sample R² of 0.627 across 2,469 municipalities, against 0.112 for the baseline. Python, pandas, scikit-learn and statsmodels. The rest of this README is in Spanish.
+
 Modelo replicable para identificar los municipios con mayor rezago en el acceso
 a la educación media superior, construido exclusivamente con datos abiertos y
 validado en entidades federativas que no participaron en su entrenamiento.
