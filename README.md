@@ -1,77 +1,52 @@
-# Rezago en el acceso a la educación media superior en México
+# Gaps in Access to Upper-Secondary Education in Mexico
 
-> **In English:** a replicable model, built only from Mexican open data (INEGI, SEP, CONEVAL), that identifies the municipalities with the largest gap in access to upper-secondary education. Validated by holding out whole states, it reaches an out-of-sample R² of 0.627 across 2,469 municipalities, against 0.112 for the baseline. Python, pandas, scikit-learn and statsmodels. The rest of this README is in Spanish.
+A replicable model that identifies the municipalities with the largest gap in access to upper-secondary education, built only from open data and validated on states that took no part in its training.
 
-Modelo replicable para identificar los municipios con mayor rezago en el acceso
-a la educación media superior, construido exclusivamente con datos abiertos y
-validado en entidades federativas que no participaron en su entrenamiento.
-
-Cubre los **2,469 municipios** y **189,432 localidades** del país.
+It covers all **2,469 municipalities** and **189,432 localities** in the country.
 
 ---
 
-## Resultado principal
+## Main result
 
-Un modelo que emplea únicamente condiciones estructurales del territorio
-—distancia a los planteles, pobreza, rezago social, dispersión del poblamiento,
-mercado laboral y vivienda— alcanza un **R² de 0.627 fuera de muestra**
-prediciendo municipios de estados que nunca observó durante el entrenamiento.
+A model that uses only structural conditions of each territory (distance to schools, poverty, social deprivation, settlement dispersion, labor market and housing) reaches an **out-of-sample R² of 0.627** when predicting municipalities in states it never saw during training.
 
-| Especificación | R² fuera de muestra | Error absoluto medio |
+| Specification | Out-of-sample R² | Mean absolute error |
 |---|---|---|
-| Línea base: media nacional | 0.000 | 7.63 |
-| Línea base: media de la propia entidad | 0.112 | 7.31 |
-| Estructural, regresión de cresta | 0.526 | 5.27 |
-| **Estructural, potenciación por gradiente** | **0.627** | **4.55** |
-| Ampliada, con inasistencia de 12 a 14 años | 0.830 | 2.99 |
+| Baseline: national mean | 0.000 | 7.63 |
+| Baseline: mean of the municipality's own state | 0.112 | 7.31 |
+| Structural, ridge regression | 0.526 | 5.27 |
+| **Structural, gradient boosting** | **0.627** | **4.55** |
+| Extended, with non-attendance at ages 12 to 14 | 0.830 | 2.99 |
 
-![Inasistencia observada contra predicha en los 2,469 municipios, y R² por entidad](salidas/figuras/fig5_validacion_estados.png)
+![Observed versus predicted non-attendance across the 2,469 municipalities, and R² by state](salidas/figuras/fig5_validacion_estados.png)
 
-La validación aparta **estados completos** en cada pliegue. Una validación
-cruzada aleatoria habría inflado el resultado, porque los municipios vecinos
-comparten condiciones y el modelo puede memorizar regiones.
+Each fold holds out **whole states**. Random cross-validation would have inflated the result, because neighboring municipalities share conditions and the model can memorize regions.
 
-## Tres hallazgos que conviene destacar
+## Three findings worth highlighting
 
-**Focalizar por tasa captura menos que elegir al azar.** Ordenar los municipios
-por tasa de inasistencia y seleccionar el decil superior alcanza al 9% de los
-adolescentes fuera de la escuela, por debajo del 10% que daría una selección
-aleatoria, porque los municipios de tasa más alta son de población reducida.
-Ordenar por número absoluto captura el 59%. Son dos políticas distintas.
+**Targeting by rate reaches fewer students than choosing at random.** Ranking municipalities by non-attendance rate and selecting the top decile reaches 9% of out-of-school teenagers, below the 10% a random selection would give, because the municipalities with the highest rates have small populations. Ranking by absolute numbers captures 59%. These are two different policies.
 
-**La tasa de deserción municipal del Formato 911 no sirve para análisis
-territorial.** Arroja R² ajustado de 0.002 en corte transversal y 0.017 en panel.
-Dos causas documentadas: los municipios con menos de 300 estudiantes tienen una
-desviación estándar de 6.78 puntos entre ciclos, y el registro atribuye cada
-alumno al municipio de su escuela y no al de su residencia.
+**The municipal dropout rate from the Formato 911 school census is not suitable for territorial analysis.** It yields an adjusted R² of 0.002 in cross-section and 0.017 in panel. There are two documented causes: municipalities with fewer than 300 students have a standard deviation of 6.78 points between school years, and the census assigns each student to the municipality of their school rather than their residence.
 
-**La distancia al plantel tiene efecto causal pero margen agregado reducido.**
-Cada kilómetro adicional reduce la asistencia en 1.70 puntos porcentuales, con
-una prueba de falsación simétrica que descarta explicaciones alternativas. Pero
-cerrar todas las distancias en Guerrero recuperaría solo 1.66 puntos, porque la
-política ya cerró la mayor parte de esa brecha.
+**Distance to school has a causal effect but a small aggregate margin.** Each additional kilometer reduces attendance by 1.70 percentage points, and a symmetric falsification test rules out alternative explanations. However, closing every distance gap in Guerrero would recover only 1.66 points, because policy has already closed most of that gap.
 
 ---
 
-## Reproducir los resultados
+## Reproducing the results
 
 ```bash
 uv venv && uv pip install -r requirements.txt
 ```
 
-Los datos crudos (785 MB) no están versionados. Se descargan con:
+The raw data (785 MB) is not versioned. Download it with:
 
 ```bash
 .venv/bin/python src/00_descargar.py
 ```
 
-El script verifica cada archivo contra el SHA-256 registrado en
-`datos/crudo/MANIFIESTO.csv`, de modo que se obtiene exactamente el mismo
-conjunto con el que se produjeron estos resultados. Los portales de datos
-abiertos sustituyen archivos sin control de versiones, y por eso el manifiesto
-es parte del repositorio.
+The script checks each file against the SHA-256 recorded in `datos/crudo/MANIFIESTO.csv`, so you get exactly the data set used to produce these results. Open-data portals replace files without version control, which is why the manifest is part of the repository.
 
-Después, en orden:
+Then run, in order:
 
 ```bash
 for s in 01_puente_municipios 02_abandono 03_cruce 04_distancia \
@@ -82,53 +57,42 @@ for s in 01_puente_municipios 02_abandono 03_cruce 04_distancia \
 done
 ```
 
-## Estructura
+## Structure
 
 ```
-src/      pipeline numerado; cada script documenta en su encabezado qué
-          decide, qué supone y qué limitación conserva
-docs/     manuscrito en APA 7, revisión de literatura, resultados y el diseño
-          del sistema de alerta temprana a nivel estudiante
-datos/    limpio/ contiene las salidas analíticas; crudo/ solo el manifiesto
-salidas/  PDF del manuscrito y figuras en PNG a 300 dpi
+src/      numbered pipeline; each script's header documents what it decides,
+          what it assumes and which limitation it keeps
+docs/     APA 7 manuscript, literature review, results and the design of the
+          student-level early warning system
+datos/    limpio/ holds the analytical outputs; crudo/ only the manifest
+salidas/  manuscript PDF and 300 dpi PNG figures
 ```
 
-Archivos de interés inmediato:
+Files of immediate interest (in Spanish):
 
-- `datos/limpio/riesgo_municipal.csv` — los 2,469 municipios clasificados, con
-  inasistencia observada, predicha, y la brecha entre ambas.
-- `salidas/Articulo_APA7.pdf` — el manuscrito completo.
-- `salidas/Articulo_APA7.docx` — el mismo manuscrito en Word, editable.
-  Tanto el PDF como el .docx se generan desde `docs/ARTICULO.md`, de modo que
-  una corrección se hace una vez y las dos versiones se regeneran.
-- `docs/ALERTA_TEMPRANA_UAGRO.md` — diseño de un sistema de alerta temprana a
-  nivel estudiante, que es la unidad donde una alerta sí resulta accionable.
+- `datos/limpio/riesgo_municipal.csv`: the 2,469 classified municipalities, with observed and predicted non-attendance and the gap between them.
+- `salidas/Articulo_APA7.pdf`: the full manuscript.
+- `salidas/Articulo_APA7.docx`: the same manuscript as an editable Word file. Both are generated from `docs/ARTICULO.md`, so a correction is made once and both versions are rebuilt.
+- `docs/ALERTA_TEMPRANA_UAGRO.md`: the design of a student-level early warning system, the level at which an alert can actually be acted on.
 
-## Fuentes
+## Sources
 
-Las tres son de acceso abierto y se citan en el manuscrito:
+All three are open access and cited in the manuscript:
 
-- **INEGI**, Censo de Población y Vivienda 2020, Principales Resultados por
-  Localidad (ITER).
-- **SEP**, Formato 911, ciclos 2019-2020 a 2024-2025.
-- **CONEVAL**, Índice de Rezago Social 2020 y medición de pobreza municipal.
+- **INEGI**, 2020 Population and Housing Census, Main Results by Locality (ITER).
+- **SEP**, Formato 911, school years 2019-2020 to 2024-2025.
+- **CONEVAL**, 2020 Social Deprivation Index and municipal poverty measurement.
 
-## Entorno
+## Environment
 
-**Tecnologías:** Python, pandas, NumPy, SciPy, scikit-learn, statsmodels, Matplotlib y LaTeX.
+**Technologies:** Python, pandas, NumPy, SciPy, scikit-learn, statsmodels, Matplotlib and LaTeX.
 
-Python 3.12.3, NumPy 2.5.3, pandas 3.0.6, SciPy 1.18.1, scikit-learn 1.9.1,
-statsmodels 0.15.0. El PDF se compila con pdfLaTeX.
+Python 3.12.3, NumPy 2.5.3, pandas 3.0.6, SciPy 1.18.1, scikit-learn 1.9.1, statsmodels 0.15.0. The PDF is compiled with pdfLaTeX.
 
-## Licencia
+## License
 
-El código se publica bajo licencia MIT (ver `LICENSE`). Los datos pertenecen a
-las instituciones que los publican y se rigen por sus propios términos; los
-conjuntos de datos.gob.mx empleados aquí están bajo CC BY 4.0.
+The code is released under the MIT license (see `LICENSE`). The data belongs to the institutions that publish it and is governed by their own terms; the datos.gob.mx data sets used here are under CC BY 4.0.
 
-## Cita
+## Citation
 
-Mariano Ruiz, E. D. (2026). *Identificación de municipios con rezago en el
-acceso a la educación media superior: un modelo replicable con datos abiertos
-para México* [Manuscrito no publicado]. Facultad de Ingeniería, Universidad
-Autónoma de Guerrero.
+Mariano Ruiz, E. D. (2026). *Identificación de municipios con rezago en el acceso a la educación media superior: un modelo replicable con datos abiertos para México* [Unpublished manuscript]. Facultad de Ingeniería, Universidad Autónoma de Guerrero.
